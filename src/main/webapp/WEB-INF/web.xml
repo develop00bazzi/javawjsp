@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>javawjsp</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- Controller 설정 -->
+  
+  <!-- 
+  <servlet>
+  	<servlet-name>test2</servlet-name>
+  	<servlet-class>j211111.Test2</servlet-class>
+  </servlet>
+  	<servlet-mapping>
+  		<servlet-name>test2</servlet-name>
+  		<url-pattern>/t2</url-pattern>		
+  	</servlet-mapping> 
+  -->
+  
+  <servlet>
+  	<servlet-name>test2</servlet-name>
+  	<servlet-class>j221111.Test2</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>test2</servlet-name>
+  	<url-pattern>/T2</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>	<!-- 서블릿 파일을 컨트롤러에 별명으로 지정 -->
+  	<servlet-name>test12</servlet-name>	<!-- 웹에 연결하고 싶은 서블릿 파일의 닉네임 (해킹의 위험 방지) -->
+  	<servlet-class>j221111.Test12</servlet-class> <!-- 웹에 연결하고 싶은 서블릿 파일의 실제 경로 -->
+  </servlet>
+  
+  <servlet-mapping> <!-- 서블릿 파일에 접속하기 위해 URL 맵핑 -->
+  	<servlet-name>test12</servlet-name> <!-- 웹에 연결하고 싶은 서블릿 파일의 닉네임 (해킹의 위험 방지) -->
+  	<url-pattern>/test12ok</url-pattern>	<!-- 웹에서 들어올때 URL을 적고 들어와야 하기 때문에 URL을 맵핑해준다. -->
+  </servlet-mapping>
+  	
+  
+  <!-- 특정 서블릿에 초기값을 할당하기 -->
+  
+  <!--
+  
+  <servlet>
+  	<servlet-name>green</servlet-name>
+  	<servlet-class>j221117.Green</servlet-class>
+  	<init-param>
+  		<param-name>mid</param-name>
+  		<param-value>admin</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>pwd</param-name>
+  		<param-value>1234</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>className</param-name>
+  		<param-value>인사과</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>green</servlet-name>
+  	<url-pattern>/Green</url-pattern>
+  </servlet-mapping>
+  
+  -->
+  
+  <!-- 공통 변수에 초기값 할당하기 -->
+  
+  <context-param>
+  	<param-name>logoName</param-name>
+  	<param-value>Java Green Company</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>homeAddress</param-name>
+  	<param-value>http://192.168.50.65:9090/javawjsp/</param-value>
+  </context-param>
+  
+  <!-- error 페이지 설정하기 -->
+  
+  <!-- 
+  <error-page>
+  	<error-code>400</error-code>
+  	<location>/study/221117/error/error400.jsp</location>
+  </error-page>
+  
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/study/221117/error/error400.jsp</location>
+  </error-page>
+  
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/study/221117/error/error500.jsp</location>
+  </error-page> 
+  -->
+  
+  <!-- Filter 맵핑 처리 -->
+  
+ 
+  <!-- 
+  
+  <filter>
+  	<filter-name>encodingFilter</filter-name>
+  	<filter-class>filter.EncodingFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>encodingFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  	/* : 특정 경로가 아닌 어떤 경로로 들어오던지 다 처리.
+  </filter-mapping> 
+  
+  -->
+  
+  
+</web-app>

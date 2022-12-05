@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+/* 서비스 에서 구현가능 하게 가이드 */
+/* 본문크기 서브 elem 1~n 개 까지.*/
+.styleFormat_sub1{
+  float:right !important;
+  width: 15px;
+  height: 14px;
+  font-size: 12px !important;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: normal;
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+
+.keditor .mce-btn[aria-label="Undo"] {
+  position: absolute !important;
+  right: 30px  !important;
+}
+
+.keditor .mce-btn[aria-label="Redo"] {
+  position: absolute;
+  right: 5px;
+}
+
+.mce-container[aria-label="Shortcut"] {
+  top: 50%!important;
+  left: 50%!important;
+  width: 822px!important;
+  height: 529px!important;
+  padding: 37px 42px 0;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 3px;
+  box-sizing: border-box;
+  -ms-transform: translate(-50%,-50%)!important;
+  transform: translate(-50%,-50%)!important;
+  font-family: Noto Sans KR,AppleSDGothicNeo,ë§‘ì€ ê³ ë”•,Malgun Gothic,sans-serif;
+  box-shadow: 0 5px 13px 0 rgba(0,0,0,.06),0 2px 5px 0 rgba(0,0,0,.05)
+}
+
+.mce-container[aria-label="Shortcut"] .mce-window-head {
+  padding: 0 0 17px;
+  border-bottom: 2px solid #000
+}
+
+.mce-container[aria-label="Shortcut"] .mce-window-head .mce-title {
+  font-size: 16px;
+  font-weight: 500
+}
+
+.os_windows .mce-container[aria-label="Shortcut"] .mce-window-head .mce-title {
+  font-weight: 600
+}
+
+.mce-container[aria-label="Shortcut"] .mce-abs-layout .mce-abs-layout-item .mce-charmap {
+  width: 626px;
+  margin-top: 18px
+}
+
+.mce-container[aria-label="Shortcut"] .mce-abs-layout .mce-abs-layout-item .mce-charmap td {
+  border: none
+}
+
+.mce-container[aria-label="Shortcut"] .mce-foot {
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0
+}
+
+.mce-container[aria-label="Shortcut"] .mce-foot .mce-container-body {
+  text-align: center
+}
+
+.mce-container[aria-label="Shortcut"] .mce-foot .mce-container-body .mce-btn {
+  width: 88px;
+  height: 40px;
+  padding-top: 5px;
+  border: 1px solid #e4e4e4;
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: #333;
+  font-size: 13px;
+  text-align: center
+}
+
+.mce-container[aria-label="Shortcut"] .wrap_shortcut{
+  padding: 0;
+}
