@@ -40,13 +40,13 @@ public class PdsDeleteCommand implements PdsInterface {
 //				file.delete();
 				new File(realPath+fSName).delete();
 			}
+//			파일 삭제 완료 후 DB에 저장된 자료파일을 삭제한다.
+			
+			String res=dao.setPdsDelete(idx);
+			
+			response.getWriter().write(res);
 		}
 		
-//		파일 삭제 완료 후 DB에 저장된 자료파일을 삭제한다.
-		
-		String res=dao.setPdsDelete(idx);
-		
-		response.getWriter().write(res);
 		
 	}
 

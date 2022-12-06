@@ -54,6 +54,11 @@ public class PdsController extends HttpServlet {
 			command.execute(request, response);
 			return;
 		}
+		else if(com.equals("/pdsContent")) {
+			command=new PdsContentCommand();
+			command.execute(request, response);
+			viewPage+="/pdsContent.jsp";
+		}
 		
 		
 		RequestDispatcher dispatcher=request.getRequestDispatcher(viewPage);

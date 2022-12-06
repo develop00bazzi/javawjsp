@@ -22,5 +22,6 @@ desc pds;
 
 select * from pds order by idx desc;
 
+select count(*) as cnt from pds where title like '%우%' and part='전체';
 
 

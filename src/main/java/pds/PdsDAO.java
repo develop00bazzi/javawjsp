@@ -201,6 +201,101 @@ public class PdsDAO {
 		
 		return res;
 	}
+
+//	검색 결과의 총 개수 가져오기
+	
+	public int searchTotRecCnt(String search, String searchString, String part) {
+		int totRecCnt=0;
+		
+		try {
+			if(part.equals("전체")) {
+				sql="select count(*) as cnt from pds where "+search+" like ?";
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, "%"+searchString+"%");
+			}
+			else {
+				sql="select count(*) as cnt from pds where part=?";
+				sql="select count(*) as cnt from pds where "+search+" like ? and part=?";
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, "%"+searchString+"%");
+				pstmt.setString(2, part);
+			}
+			
+			rs=pstmt.executeQuery();
+			rs.next();
+			totRecCnt=rs.getInt("cnt");
+			
+		} catch (SQLException e) {
+			System.out.println("SLQ 오류: "+e.getMessage());
+		} finally {
+			getConn.rsClose();
+		}
+		
+		return totRecCnt;
+	}
+	
+//	자료실 내 정보 검색 처리
+
+	public ArrayList<PdsVO> getBoContentSearch(int startIndexNo, int pageSize, String search, String searchString, String part) {
+		ArrayList<PdsVO> vos=new ArrayList<>();
+		
+		try {
+			
+			if(part.equals("전체")) {
+				sql="select *,datediff(now(), fDate) as day_diff, "
+						+ "timestampdiff(hour,fDate,now()) as hour_diff "
+						+ "from pds where "+search+" like ? order by idx desc limit ?,?";
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, "%"+searchString+"%");
+				pstmt.setInt(2, startIndexNo);
+				pstmt.setInt(3, pageSize);
+			}
+			else {
+				sql="select *,datediff(now(), fDate) as day_diff, "
+						+ "timestampdiff(hour,fDate,now()) as hour_diff "
+						+ "from pds where part=? and "+search+" like ? order by idx desc limit ?,?";
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, part);
+				pstmt.setString(2, "%"+searchString+"%");
+				pstmt.setInt(3, startIndexNo);
+				pstmt.setInt(4, pageSize);
+			}
+//			
+			rs=pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				vo=new PdsVO();
+				
+				vo.setIdx(rs.getInt("idx"));
+				vo.setMid(rs.getString("mid"));
+				vo.setNickName(rs.getString("nickName"));
+				vo.setfName(rs.getString("fName"));
+				vo.setfSName(rs.getString("fSName"));
+				vo.setfSize(rs.getInt("fSize"));
+				vo.setTitle(rs.getString("title"));
+				vo.setPart(rs.getString("part"));
+				vo.setPwd(rs.getString("pwd"));
+				vo.setfDate(rs.getString("fDate"));
+				vo.setDownNum(rs.getInt("downNum"));
+				vo.setOpenSw(rs.getString("openSw"));
+				vo.setContent(rs.getString("content"));
+				vo.setHostIp(rs.getString("hostIp"));
+				
+				vo.setDay_diff(rs.getInt("day_diff"));
+				vo.setHour_diff(rs.getInt("hour_diff"));
+		
+				vos.add(vo);
+				
+			}
+		} catch (SQLException e) {
+			System.out.println("SLQ 오류: "+e.getMessage());
+		} finally {
+			getConn.rsClose();
+		}
+		
+		return vos;
+	}
 	
 
 }

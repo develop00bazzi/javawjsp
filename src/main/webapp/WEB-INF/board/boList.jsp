@@ -15,7 +15,7 @@
 		
 		function pCheck() {
 			let pageSize=document.getElementById("pageSize").value;
-			location.href="${ctp}/boList.bo?pageSize="+pageSize+"&pageSize=${pageSize}&flag=${flag}&search=${search}&searchString=${searchString}";
+			location.href="${ctp}/boList.bo?pageSize="+pageSize+"&flag=${flag}&search=${search}&searchString=${searchString}";
 		}
 		
 		function searchCheck() {

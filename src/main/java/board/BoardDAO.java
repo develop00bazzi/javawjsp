@@ -288,7 +288,7 @@ public class BoardDAO {
 		ArrayList<BoardVO> vos=new ArrayList<>();
 		
 		try {
-			sql="select * from board where "+search+" like ? order by idx desc";
+//			sql="select * from board where "+search+" like ? order by idx desc";
 			
 			sql="select *,datediff(now(), wDate) as day_diff, "
 					+ "timestampdiff(hour,wDate,now()) as hour_diff"
