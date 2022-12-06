@@ -212,7 +212,7 @@
 						(<a href="javascript:replyDelCheck(${replyVo.idx})" title="삭제하기">✂</a>)
 					</c:if>
 				</td>
-				<td>${replyVo.content}</td>
+				<td>${fn:replace(replyVo.content,newLine,'<br/>')}</td>
 				<td>${replyVo.wDate}</td>
 				<td>${replyVo.hostIp}</td>
 			</tr>

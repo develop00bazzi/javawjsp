@@ -67,7 +67,7 @@ public class MemJoinOkCommand implements MemberInterface {
 			filesystemName="noimage.jpg";
 		}
 		else {
-			filesystemName=originalFileName;
+			filesystemName=filesystemName;
 		}
 		
 //		DB에 저장시, 테이블 설계에서 지정한 각 필드의 길이 체크 처리

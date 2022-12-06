@@ -58,6 +58,7 @@ public class MemLoginOkCommand implements MemberInterface {
 		session.setAttribute("sMid", mid);
 		session.setAttribute("sNickName", vo.getNickName());
 		session.setAttribute("sLevel", vo.getLevel());
+		session.setAttribute("photo", vo.getPhoto());
 		
 //		2. 오늘 방문 횟수 처리
 //		3. 방문 수와 방문 포인트 증가

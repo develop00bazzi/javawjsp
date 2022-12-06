@@ -47,6 +47,8 @@
 		else if(msg=="upLoad1Ok") msg="파일이 서버로 전송중입니다!";
 		else if(msg=="upLoad1No") msg="파일을 서버로 업로드하는데 실패하였습니다!";
 		else if(msg=="boReplyNotNull") msg="게시글에 댓글이 1개 이상 있는 경우 게시글을 삭제할 수 없습니다.";
+		else if(msg=="pdsInputOk") msg="자료가 성공적으로 업로드되었습니다!";
+		else if(msg=="pdsInputNo") msg="자료를 업로드하는데 실패하였습니다!";
 			
 		alert(msg);
 		if(url!="") location.href=url;

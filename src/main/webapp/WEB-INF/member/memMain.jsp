@@ -17,6 +17,9 @@
 	<hr/>
 	<p><font color="blue"><b>${sNickName}</b></font>님 로그인 중</p>
 	<p>현재 <font color="blue"><b>${strLevel}</b></font>등급입니다.</p>
+	<%-- <c:if test="${photo!=""}"> --%>
+		<p><img src="${ctp}/data/member/${photo}"></p>
+	<%-- </c:if> --%>
 	<p>누적 포인트: ${point}</p>
 	<p>최종 접속일: ${lastDate}</p>
 	<p>총 방문 횟수: ${visitCnt}</p>
