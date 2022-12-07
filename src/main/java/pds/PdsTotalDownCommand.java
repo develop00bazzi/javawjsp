@@ -56,12 +56,15 @@ public class PdsTotalDownCommand implements PdsInterface {
 		
 		for(int i=0; i<fNames.length; i++) {
 			
-			File file=new File(realPath+fNames[i]);	// 실제 파일 가져오기
-			File copyAndRename=new File(realPath+fSNames[i]);	// ZIP에 들어갈 업로드할때의 진짜 이름 가져오기
+			File file=new File(realPath+fSNames[i]);	// 실제 파일 가져오기
 			
-			file.renameTo(copyAndRename);	// copyAndRename을 file로 재정의
+//			File copyAndRename=new File(realPath+fSNames[i]);	// ZIP에 들어갈 업로드할때의 진짜 이름 가져오기
+//			
+//			file.renameTo(copyAndRename);	// copyAndRename을 file로 재정의
+//			
+//			fis=new FileInputStream(copyAndRename);
 			
-			fis=new FileInputStream(copyAndRename);
+			fis=new FileInputStream(file);
 			
 			zos.putNextEntry(new ZipEntry(fNames[i]));
 			
