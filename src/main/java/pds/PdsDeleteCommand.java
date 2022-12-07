@@ -18,6 +18,7 @@ public class PdsDeleteCommand implements PdsInterface {
 		String pwd=request.getParameter("pwd")==null?"":request.getParameter("pwd");
 		String fSName_=request.getParameter("fSName")==null?"":request.getParameter("fSName");
 		String[] fSNames=fSName_.split("/");
+		String flag=request.getParameter("flag")==null?"prompt":request.getParameter("flag");
 		
 		SecurityUtil security=new SecurityUtil();
 		
@@ -43,6 +44,8 @@ public class PdsDeleteCommand implements PdsInterface {
 //			파일 삭제 완료 후 DB에 저장된 자료파일을 삭제한다.
 			
 			String res=dao.setPdsDelete(idx);
+			
+			
 			
 			response.getWriter().write(res);
 		}

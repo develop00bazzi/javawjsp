@@ -28,7 +28,7 @@ public class PdsListCommand implements PdsInterface {
 			
 //		2. 한 페이지에 보여줄 분량을 결정한다.
 			
-			int pageSize=request.getParameter("pageSize")==null?10:Integer.parseInt(request.getParameter("pageSize"));
+			int pageSize=request.getParameter("pageSize")==null?5:Integer.parseInt(request.getParameter("pageSize"));
 			
 //		System.out.println("pageSize: "+pageSize);
 			

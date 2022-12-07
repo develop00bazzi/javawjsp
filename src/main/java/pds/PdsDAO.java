@@ -297,5 +297,22 @@ public class PdsDAO {
 		return vos;
 	}
 	
+//	다운로드 횟수 증가
+
+	public void setPdsDownNum(int idx) {
+		
+		try {
+			sql="update pds set downNum=downNum+1 where idx=?";
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, idx);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("SLQ 오류: "+e.getMessage());
+		} finally {
+			getConn.pstmtClose();
+		}
+		
+	}
+	
 
 }

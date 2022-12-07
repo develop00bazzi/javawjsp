@@ -55,12 +55,13 @@
 				<td>${st.count} </td>
 				<c:set var="fNameArr" value="${fn:split(file,'.')}" />
 				<td>
-					<a href="${ctp}/data/pdstest/${file}" download="${file}">${file}</a>
+					<a href="${ctp}/data/pdstest/${file}" download="${file}">${file}</a><br>
+					<a href="${ctp}/javaDown.st?file=${file}" >자바 방식 다운로드</a><br>
 				</td>
 				<td>
 					<c:set var="extName" value="${fn:toLowerCase(fNameArr[fn:length(fNameArr)-1])}" />
 					<c:if test="${extName=='zip'}">압축파일</c:if>
-					<c:if test="${extName=='ppt'||extName=='pptx'}">움짤파일</c:if>
+					<c:if test="${extName=='ppt'||extName=='pptx'}">프레젠테이션 파일</c:if>
 					<c:if test="${extName=='jpg'||extName=='png'||extName=='gif'}">
 						<img src="${ctp}/data/pdstest/${file}" width="150px" />
 					</c:if>
