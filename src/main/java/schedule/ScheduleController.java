@@ -51,6 +51,18 @@ public class ScheduleController extends HttpServlet {
 			return;
 		}
 		
+		else if(com.equals("/scheduleUpdateOk")) {
+			command=new ScheduleUpdateOkCommand();
+			command.execute(request, response);
+			return;
+		}
+		
+		else if(com.equals("/scheduleDeleteOk")) {
+			command=new ScheduleDeleteOkCommand();
+			command.execute(request, response);
+			return;
+		}
+		
 		
 		
 		RequestDispatcher dispatcher=request.getRequestDispatcher(viewPage);
