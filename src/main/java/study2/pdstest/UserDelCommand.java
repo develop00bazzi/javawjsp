@@ -1,4 +1,4 @@
-package study2;
+package study2.pdstest;
 
 import java.io.IOException;
 
@@ -6,22 +6,24 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import conn.SecurityUtil;
+import study2.StudyInterface;
+import study2.ajax.UserDAO;
+import study2.ajax.UserVO;
 
-public class PassOk2Command implements StudyInterface {
+public class UserDelCommand implements StudyInterface {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String mid=request.getParameter("mid")==null?"":request.getParameter("mid");
-		String pwd=request.getParameter("pwd")==null?"":request.getParameter("pwd");
 		
-		SecurityUtil security=new SecurityUtil();
+		UserDAO dao=new UserDAO();
 		
-		String shaPwd=security.encryptSHA256(pwd);
+		String res=dao.setUserDel(mid);
 		
-		request.setAttribute("mid", mid);
-		request.setAttribute("pwd", pwd);
-		request.setAttribute("shaPwd", shaPwd);
+		response.getWriter().write(res);
+		
+//		현재 창에다가 내용을 작성하겠다.
+
 	}
 
 }

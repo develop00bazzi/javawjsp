@@ -6,23 +6,17 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import study2.ajax.UserDAO;
-import study2.ajax.UserVO;
+import study2.api.CrimeDAO;
 
-public class UserDelCommand implements StudyInterface {
+public class StCrimeDeleteCommand implements StudyInterface {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String mid=request.getParameter("mid")==null?"":request.getParameter("mid");
+		CrimeDAO dao=new CrimeDAO();
 		
-		UserDAO dao=new UserDAO();
-		
-		String res=dao.setUserDel(mid);
+		String res=dao.setCrimeDeleteOk();
 		
 		response.getWriter().write(res);
-		
-//		현재 창에다가 내용을 작성하겠다.
-
 	}
 
 }

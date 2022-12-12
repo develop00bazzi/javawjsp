@@ -83,6 +83,7 @@
 			      <div class="dropdown-menu">
 				      <a class="dropdown-item" href="${ctp}/calendar1.st">Calendar(1)</a>
 				      <a class="dropdown-item" href="${ctp}/calendar2.st">Calendar(2)</a>
+				      <a class="dropdown-item" href="${ctp}/stApi.st">공공 데이터 연습</a>
 				    
 			      </div>
 		      </li>
